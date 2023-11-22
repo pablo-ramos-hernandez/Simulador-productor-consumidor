@@ -1,5 +1,7 @@
 package cliente;
 
+import huerto.Huerto;
+
 public class Cliente extends Thread {
 
     private final String NOMBRE;
