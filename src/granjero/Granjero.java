@@ -1,6 +1,8 @@
-package Granjero;
+package granjero;
 
 import java.util.Random;
+
+import huerto.Huerto;
 
 public class Granjero extends Thread {
     private final String nombre;
