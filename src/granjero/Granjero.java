@@ -5,18 +5,18 @@ import java.util.Random;
 import huerto.Huerto;
 
 public class Granjero extends Thread {
-    private final String nombre;
-    private final Huerto huerto;
-    private final int cantidaVerduras;
+    private final String NOMBRE;
+    private final Huerto HUERTO;
+    private final int CANTIDADVERDURAS;
 
     /**
      * Creamos el constructor y tenemos que implementar una clase Huerto para poder
      * llamarlo sin necesidad de crear clases estaticas
      */
     public Granjero(String nombre, Huerto huerto, int cantidaVerduras) {
-        this.nombre = nombre;
-        this.huerto = huerto;
-        this.cantidaVerduras = cantidaVerduras;
+        this.NOMBRE = nombre;
+        this.HUERTO = huerto;
+        this.CANTIDADVERDURAS = cantidaVerduras;
     }
 
     /**
@@ -27,10 +27,10 @@ public class Granjero extends Thread {
      */
     @Override
     public void run() {
-        for (int i = 0; i < cantidaVerduras; i++) {
+        for (int i = 0; i < CANTIDADVERDURAS; i++) {
             try {
                 String verdura = getRandomVegetable();
-                huerto.plantarVerdura(nombre, verdura);
+                HUERTO.plantarVerdura(NOMBRE, verdura);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

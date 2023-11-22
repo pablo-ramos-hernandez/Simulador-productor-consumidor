@@ -10,14 +10,14 @@ public class Huerto {
      * Importante poner todos los metodos synchronized porque no pueden ir en los
      * hilos debido a que no pueden ir en el punto de fractura
      */
-    private final int capacidadAlmacen;
-    private final List<String> almacen;
+    private final int CAPACIDADALMACEN;
+    private final List<String> ALMACEN;
 
     // Creamos el constructor y nos obliga a implementar el ArrayList dentro del
     // constructor
     public Huerto(int capacidadAlmacen) {
-        this.capacidadAlmacen = capacidadAlmacen;
-        this.almacen = new ArrayList<>();
+        this.CAPACIDADALMACEN = capacidadAlmacen;
+        this.ALMACEN = new ArrayList<>();
     }
 
     /**
@@ -27,11 +27,11 @@ public class Huerto {
      * todo lo dormido
      */
     public synchronized void plantarVerdura(String nombreGranjero, String verdura) throws InterruptedException {
-        while (almacen.size() >= capacidadAlmacen) {
+        while (ALMACEN.size() >= CAPACIDADALMACEN) {
             wait();
         }
         Thread.sleep(new Random().nextInt(1000));
-        almacen.add(nombreGranjero + ": " + verdura);
+        ALMACEN.add(nombreGranjero + ": " + verdura);
         System.out.println(nombreGranjero + " ha plantado " + verdura);
         notifyAll();
     }
@@ -43,11 +43,11 @@ public class Huerto {
      * y devolvemos la palabra
      */
     public synchronized String comerVerdura(String cliente) throws InterruptedException {
-        while (almacen.isEmpty()) {
+        while (ALMACEN.isEmpty()) {
             wait();
         }
 
-        String verdura = almacen.remove(0);
+        String verdura = ALMACEN.remove(0);
         System.out.println(cliente + " ha consumido " + verdura);
         notifyAll();
         return verdura;

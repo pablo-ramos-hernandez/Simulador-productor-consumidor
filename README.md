@@ -1,19 +1,13 @@
-## Getting Started
+## Simulador-producto-consumidor
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Una empresa de alimentación nos ha contactado para desarrollar una aplicación que simule la realidad de granjeros. Los granjeros tienen un huerto local en el que pueden plantar distintos tipos de verduras para su venta a clientes en un restaurante vegano.
+Para ello, será necesaria la implementación de una clase hilo que actúe como consumidor y otra que haga de productor. Estos hilos deben acceder a un recurso compartido en el que depositar o recoger los productos elaborados teniendo en cuenta que estas acciones son secciones críticas.
 
-## Folder Structure
+## Estructura de carpetas
 
-The workspace contains two folders by default, where:
+Se basa en 4 carpetas:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
-"# Simulador-productor-consumidor" 
+- `src`: la carpeta donde contiene todas las clases
+- `cliente`: la carpeta donde contiene la clase Cliente
+- `granjero`: la carpeta donde contiene la clase Granjero
+- `huerto`: la carpeta donde contiene la clase Huerto
